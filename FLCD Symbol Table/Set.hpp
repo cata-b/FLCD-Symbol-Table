@@ -112,6 +112,7 @@ public:
 
 	/// <summary>Removes the item at an iterator</summary>
 	/// <param name="iterator">The position of the item to remove</param>
+	/// <remarks>Throws std::runtime_error if the iterator points outside the container (e.g. is equal to end())</remarks>
 	void erase(Iterator iterator);
 
 	/// <returns>The number of items in the set</returns>
@@ -270,6 +271,8 @@ inline typename Set<KeyType, Hash, Equals>::Iterator Set<KeyType, Hash, Equals>:
 template<class KeyType, class Hash, class Equals>
 inline void Set<KeyType, Hash, Equals>::erase(Iterator iterator)
 {
+	if (iterator.current_ < data_ && iterator.current_ >= data_ + capacity_)
+		throw std::runtime_error("Iterator is invalid");
 	auto pos = iterator.current_ - data_;
 	if (pos < firstEmpty_)
 		firstEmpty_ = pos;
