@@ -1,0 +1,167 @@
+.TH "SymbolTable::Position" 3 "Fri Oct 15 2021" "Symbol Table" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SymbolTable::Position \- Symbol table const iterator\&. Will still be valid after inserts in the parent \fBSymbolTable\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SymbolTable\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::input_iterator_tag \fBiterator_category\fP"
+.br
+.ti -1c
+.RI "typedef std::ptrdiff_t \fBdifference_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPosition\fP (\fBPosition\fP &&other)"
+.br
+.ti -1c
+.RI "\fBPosition\fP (const \fBPosition\fP &other)"
+.br
+.ti -1c
+.RI "\fBPosition\fP (\fBSymbolTable\fP *parent, \fBSet\fP< std::string >::Iterator iterator)"
+.br
+.ti -1c
+.RI "\fB~Position\fP ()"
+.br
+.ti -1c
+.RI "\fBSymbolTable\fP & \fBsymbolTable\fP () const"
+.br
+.ti -1c
+.RI "\fBPosition\fP & \fBoperator++\fP ()"
+.br
+.ti -1c
+.RI "\fBPosition\fP \fBoperator++\fP (int)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBPosition\fP other) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (\fBPosition\fP other) const"
+.br
+.ti -1c
+.RI "\fBreference\fP \fBoperator*\fP () const"
+.br
+.ti -1c
+.RI "\fBpointer\fP \fBoperator\->\fP () const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const typedef std::string \fBvalue_type\fP"
+.br
+.ti -1c
+.RI "const typedef std::string * \fBpointer\fP"
+.br
+.ti -1c
+.RI "const typedef std::string & \fBreference\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSymbolTable\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Symbol table const iterator\&. Will still be valid after inserts in the parent \fBSymbolTable\fP 
+
+
+.PP
+Definition at line 15 of file SymbolTable\&.h\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef std::ptrdiff_t \fBSymbolTable::Position::difference_type\fP"
+
+.PP
+Definition at line 20 of file SymbolTable\&.h\&.
+.SS "typedef std::input_iterator_tag \fBSymbolTable::Position::iterator_category\fP"
+
+.PP
+Definition at line 18 of file SymbolTable\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SymbolTable::Position::Position (\fBPosition\fP && other)"
+
+.PP
+Definition at line 69 of file SymbolTable\&.cpp\&.
+.SS "SymbolTable::Position::Position (const \fBPosition\fP & other)"
+
+.PP
+Definition at line 75 of file SymbolTable\&.cpp\&.
+.SS "SymbolTable::Position::Position (\fBSymbolTable\fP * parent, \fBSet\fP< std::string >::Iterator iterator)"
+
+.PP
+Definition at line 79 of file SymbolTable\&.cpp\&.
+.SS "SymbolTable::Position::~Position ()\fC [inline]\fP"
+
+.PP
+Definition at line 87 of file SymbolTable\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SymbolTable::Position::operator!= (\fBPosition\fP other) const"
+
+.PP
+Definition at line 121 of file SymbolTable\&.cpp\&.
+.SS "\fBSymbolTable::Position::reference\fP SymbolTable::Position::operator* () const"
+
+.PP
+Definition at line 126 of file SymbolTable\&.cpp\&.
+.SS "\fBSymbolTable::Position\fP & SymbolTable::Position::operator++ ()"
+
+.PP
+Definition at line 103 of file SymbolTable\&.cpp\&.
+.SS "\fBSymbolTable::Position\fP SymbolTable::Position::operator++ (int)"
+
+.PP
+Definition at line 109 of file SymbolTable\&.cpp\&.
+.SS "\fBSymbolTable::Position::pointer\fP SymbolTable::Position::operator\-> () const"
+
+.PP
+Definition at line 131 of file SymbolTable\&.cpp\&.
+.SS "bool SymbolTable::Position::operator== (\fBPosition\fP other) const"
+
+.PP
+Definition at line 116 of file SymbolTable\&.cpp\&.
+.SS "\fBSymbolTable\fP & SymbolTable::Position::symbolTable () const"
+
+.PP
+Definition at line 98 of file SymbolTable\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBSymbolTable\fP\fC [friend]\fP"
+
+.PP
+Definition at line 40 of file SymbolTable\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const typedef std::string* SymbolTable::Position::pointer"
+
+.PP
+Definition at line 21 of file SymbolTable\&.h\&.
+.SS "const typedef std::string& SymbolTable::Position::reference"
+
+.PP
+Definition at line 22 of file SymbolTable\&.h\&.
+.SS "const typedef std::string SymbolTable::Position::value_type"
+
+.PP
+Definition at line 19 of file SymbolTable\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Symbol Table from the source code\&.

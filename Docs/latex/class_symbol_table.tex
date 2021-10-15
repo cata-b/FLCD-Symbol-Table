@@ -1,0 +1,91 @@
+\hypertarget{class_symbol_table}{}\doxysection{Symbol\+Table Class Reference}
+\label{class_symbol_table}\index{SymbolTable@{SymbolTable}}
+
+
+Symbol table data structure. Features iterators that will sometimes get updated on insert, so that they are never invalid  
+
+
+
+
+{\ttfamily \#include $<$Symbol\+Table.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_symbol_table_1_1_position}{Position}}
+\begin{DoxyCompactList}\small\item\em Symbol table const iterator. Will still be valid after inserts in the parent \mbox{\hyperlink{class_symbol_table}{Symbol\+Table}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ \mbox{\hyperlink{class_symbol_table_1_1_position}{Position}}, bool $>$ \mbox{\hyperlink{class_symbol_table_ab5a9e8dd36dfa53ba4197f41fc6bca5c}{insert}} (const std\+::string \&symbol)
+\begin{DoxyCompactList}\small\item\em Inserts a symbol into the symbol table \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_symbol_table_1_1_position}{Position}} \mbox{\hyperlink{class_symbol_table_a8246c429712bfbc81efbba94e2b3c952}{find}} (const std\+::string \&symbol)
+\begin{DoxyCompactList}\small\item\em Searches for an entry in the \mbox{\hyperlink{class_symbol_table}{Symbol\+Table}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_symbol_table_aa52067b1ac3c15d3846e29e206fca2c7}\label{class_symbol_table_aa52067b1ac3c15d3846e29e206fca2c7}} 
+\mbox{\hyperlink{class_symbol_table_1_1_position}{Position}} {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{class_symbol_table_a682d7377e22191a36859fdd7d119fa2c}\label{class_symbol_table_a682d7377e22191a36859fdd7d119fa2c}} 
+\mbox{\hyperlink{class_symbol_table_1_1_position}{Position}} {\bfseries end} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Symbol table data structure. Features iterators that will sometimes get updated on insert, so that they are never invalid 
+
+
+
+Definition at line 9 of file Symbol\+Table.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_symbol_table_a8246c429712bfbc81efbba94e2b3c952}\label{class_symbol_table_a8246c429712bfbc81efbba94e2b3c952}} 
+\index{SymbolTable@{SymbolTable}!find@{find}}
+\index{find@{find}!SymbolTable@{SymbolTable}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_symbol_table_1_1_position}{Symbol\+Table\+::\+Position}} Symbol\+Table\+::find (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{symbol }\end{DoxyParamCaption})}
+
+
+
+Searches for an entry in the \mbox{\hyperlink{class_symbol_table}{Symbol\+Table}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & The symbol to look for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_symbol_table_1_1_position}{Position}} to the symbol or \mbox{\hyperlink{}{end()}} if it was not found
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Symbol\+Table.\+cpp.
+
+\mbox{\Hypertarget{class_symbol_table_ab5a9e8dd36dfa53ba4197f41fc6bca5c}\label{class_symbol_table_ab5a9e8dd36dfa53ba4197f41fc6bca5c}} 
+\index{SymbolTable@{SymbolTable}!insert@{insert}}
+\index{insert@{insert}!SymbolTable@{SymbolTable}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily std\+::pair$<$ typename \mbox{\hyperlink{class_symbol_table_1_1_position}{Symbol\+Table\+::\+Position}}, bool $>$ Symbol\+Table\+::insert (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{symbol }\end{DoxyParamCaption})}
+
+
+
+Inserts a symbol into the symbol table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & The symbol to insert\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{class_symbol_table_1_1_position}{Position}} of where the symbol is and whether or not the insertion happened; if a similar symbol already exists in the table, the \mbox{\hyperlink{class_symbol_table_1_1_position}{Position}} points to that 
+\end{DoxyReturn}
+
+
+Definition at line 6 of file Symbol\+Table.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Symbol\+Table.\+h\item 
+Symbol\+Table.\+cpp\end{DoxyCompactItemize}

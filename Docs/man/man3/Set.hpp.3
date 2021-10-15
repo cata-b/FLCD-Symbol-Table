@@ -1,0 +1,34 @@
+.TH "Set.hpp" 3 "Fri Oct 15 2021" "Symbol Table" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Set.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iterator>\fP
+.br
+\fC#include <functional>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <stdexcept>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSet< KeyType, Hash, Equals >\fP"
+.br
+.RI "Hashtable with coalesced chaining "
+.ti -1c
+.RI "class \fBSet< KeyType, Hash, Equals >::Iterator\fP"
+.br
+.RI "Const iterator for a \fBSet\fP\&. May become invalid/give errors after inserting data into the set; to check if an insertion would render the iterators invalid, use \fBwillInvalidateIteratorsOnInsert()\fP "
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Symbol Table from the source code\&.
