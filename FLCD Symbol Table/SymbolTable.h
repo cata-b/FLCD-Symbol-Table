@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <unordered_set>
 #include "Set.hpp"
 /// <summary>
 /// Symbol table data structure. Features iterators that will sometimes get updated on insert, so that they are never invalid
@@ -28,6 +29,9 @@ public:
 
 		SymbolTable& symbolTable() const;
 
+		Position& operator=(const Position& other);
+		Position& operator=(Position&& other);
+
 		Position& operator++();
 		Position operator++(int);
 
@@ -37,15 +41,16 @@ public:
 		reference operator*() const;
 		pointer operator->() const;
 
+		size_t index() const;
+
 		friend class SymbolTable;
 	private:
-		typedef struct
+		struct Data
 		{
 			SymbolTable* parent_;
 			Set<std::string>::Iterator iterator_;
-		} Data;
-		Data* data_;
-		void update(SymbolTable* parent, Set<std::string>::Iterator iterator);
+		};
+		Data* data_ = nullptr;
 	};
 
 	/// <summary> Inserts a symbol into the symbol table </summary>
@@ -63,13 +68,18 @@ public:
 	/// <returns>Position to the symbol or <see cref="end">end()</see> if it was not found</returns>
 	Position find(const std::string& symbol);
 
+	size_t size() const;
+
 	Position begin();
 	Position end();
+
+	~SymbolTable();
 private:
+	bool destructed_ = false;
+
 	Set<std::string> data_;
-	Set<Position::Data*> positions_;
+	std::unordered_set<Position::Data*> positions_;
 
 	void subscribe(Position::Data* subscriber);
 	void unsubscribe(Position::Data* subscriber);
 };
-
